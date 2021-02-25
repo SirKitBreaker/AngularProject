@@ -1,0 +1,25 @@
+
+<form #details="ngForm" (ngSubmit)="add(details.value)" ngNativeValidate>
+  <div>
+    <span>
+     First Name:
+    </span>
+    <input type="text"  name="firstName" required ngModel/>
+  </div><br>
+  <div>
+    <span>
+     Last Name:
+    </span>
+    <input type="text"  name="lastName" required ngModel/>
+  </div><br>
+  <div>
+    <span>
+     Age:
+    </span>
+    &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" required  name="age" ngModel/>
+  </div><br>
+   <input type="submit" value="Add Student"/>
+  </form>
+  <div *ngIf="createdFlag" >
+        Created student with ID: {{createdStudent.id}}, Name: {{createdStudent.firstName}}    
+  </div>

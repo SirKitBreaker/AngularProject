@@ -1,0 +1,22 @@
+
+<form #details="ngForm" (ngSubmit)="search(details.value)">
+    <div>
+    <span>
+     Enter Id of Student:   
+    </span>  
+    <input type="text" name="sid" ngModel /> 
+    </div><br>
+   <input type="submit" value="Search Student"/>
+  </form>
+  <br>
+  <div *ngIf="foundFlag && foundStudent.age!=0; " >
+    Student : ID: {{foundStudent.id}}, FirstName: {{foundStudent.firstName}}, 
+        LastName: {{foundStudent.lastName}}, Age:{{foundStudent.age}}    
+       <div *ngFor="let co of courses">
+        Course - {{co.name}}, ID: {{co.id}}, Fee: {{co.fee}}
+       </div>
+  </div> 
+  <div *ngIf="foundStudent.age===0;">
+    Student not found
+  </div>
+  
